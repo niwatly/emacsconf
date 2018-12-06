@@ -1,0 +1,212 @@
+((("r" .
+   [1])
+  ("Equal" .
+   [0 0 1 0 0])
+  ("FetchLiveRankingProfileByUserID" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("CertStatus" .
+   [0 0 0 0 1 0 0 0 0 0])
+  ("Fan" .
+   [1 0 0])
+  ("userID" .
+   [2 1 0 0 0 0])
+  ("period" .
+   [0 0 1 0 1 0])
+  ("categoryID" .
+   [0 0 1 0 0 0 1 0 0 0])
+  ("LiveRankingUserProfile" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0])
+  ("Log" .
+   [1 0 0])
+  ("params" .
+   [1 0 0 0 0 0])
+  ("actual" .
+   [0 0 1 0 0 0])
+  ("expected" .
+   [0 0 0 0 1 0 0 0])
+  ("actualScore" .
+   [0 0 1 0 0 0 0 0 0 0 0])
+  ("len" .
+   [2 0 0])
+  ("FetchLiveEventTeamScoresByEventID" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("fetchLiveEventTeamScoreByTeamID" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("ID" .
+   [4 1])
+  ("Id" .
+   [2 2])
+  ("LiveEventScorePair" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("T" .
+   [1])
+  ("res" .
+   [21 0 1])
+  ("normalItem" .
+   [0 1 0 0 0 0 0 0 0 0])
+  ("a" .
+   [1])
+  ("Infof" .
+   [3 0 0 0 0])
+  ("s" .
+   [2])
+  ("url" .
+   [4 0 0])
+  ("Print" .
+   [3 0 0 0 0])
+  ("Microsecond" .
+   [0 0 1 0 0 0 0 0 0 0 0])
+  ("Minute" .
+   [3 0 0 0 1 0])
+  ("Stop" .
+   [0 0 0 1])
+  ("Close" .
+   [0 0 0 1 0])
+  ("defer" .
+   [0 0 0 0 1])
+  ("C" .
+   [1])
+  ("ticker" .
+   [0 0 0 1 0 0])
+  ("NewTicker" .
+   [0 0 0 1 0 0 0 0 0])
+  ("Ticker" .
+   [0 0 1 0 0 0])
+  ("continue" .
+   [0 0 0 0 0 3 0 0])
+  ("After" .
+   [0 1 0 0 0])
+  ("Second" .
+   [0 0 2 0 1 1])
+  ("New" .
+   [1 0 0])
+  ("i" .
+   [9])
+  ("Lives" .
+   [7 0 0 0 0])
+  ("nil" .
+   [30 0 0])
+  ("data" .
+   [2 0 0 0])
+  ("Debug" .
+   [1 0 4 0 0])
+  ("users" .
+   [1 0 0 0 0])
+  ("FromString" .
+   [0 0 0 0 0 1 0 0 0 0])
+  ("err" .
+   [32 0 0])
+  ("Logger" .
+   [4 0 2 1 0 1])
+  ("tplList" .
+   [2 0 0 0 0 0 0])
+  ("string" .
+   [9 1 0 0 0 0])
+  ("user" .
+   [7 0 0 0])
+  ("Image" .
+   [1 0 0 0 0])
+  ("Name" .
+   [6 0 0 0])
+  ("User" .
+   [6 0 0 0])
+  ("name" .
+   [2 0 0 0])
+  ("QueryParam" .
+   [0 0 0 0 1 0 0 0 0 0])
+  ("handlerIndex" .
+   [0 0 1 0 0 1 0 0 0 0 0 0])
+  ("out" .
+   [1 0 0])
+  ("HTML" .
+   [1 0 0 0])
+  ("error" .
+   [3 0 0 0 0])
+  ("echo" .
+   [1 0 0 0])
+  ("Context" .
+   [1 0 0 0 0 1 0])
+  ("live" .
+   [8 0 0 0])
+  ("lives" .
+   [3 0 0 0 0])
+  ("id" .
+   [10 0])
+  ("int64" .
+   [14 0 0 0 0])
+  ("Live" .
+   [9 0 0 0])
+  ("_id" .
+   [4 0 0])
+  ("Atoi" .
+   [2 0 0 0])
+  ("Fatal" .
+   [9 0 0 0 1])
+  ("x" .
+   [2])
+  ("POST" .
+   [1 0 0 0])
+  ("JSON" .
+   [0 0 1 0])
+  ("StatusOK" .
+   [1 0 0 0 0 0 0 0])
+  ("z" .
+   [1])
+  ("postLiveReport" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("response" .
+   [1 0 0 0 0 0 0 0])
+  ("Debugf" .
+   [1 0 2 0 0 0])
+  ("Printf" .
+   [1 0 0 0 0 0])
+  ("NewSession" .
+   [0 0 0 0 0 1 0 0 0 0])
+  ("label" .
+   [3 1 2 1 0])
+  ("purchaseUserID" .
+   [1 0 1 1 0 0 0 0 0 0 0 0 0 0])
+  ("liveUserID" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("eventID" .
+   [4 0 2 0 0 0 0])
+  ("score" .
+   [2 0 2 0 0])
+  ("teamID" .
+   [3 0 0 1 0 0])
+  ("_" .
+   [4])
+  ("ps" .
+   [3 0])
+  ("prevScore" .
+   [2 0 0 1 0 0 0 0 0])
+  ("FetchLiveEventTeamFanScore" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0])
+  ("e" .
+   [3])
+  ("ErrNoRows" .
+   [3 0 0 0 0 3 0 0 0])
+  ("insertOrUpdateLiveEventTeamFanScore" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("TeamID" .
+   [3 0 0 1 1 0])
+  ("Fail" .
+   [0 0 1 0])
+  ("EqualValues" .
+   [1 0 0 0 0 0 1 0 0 2 0])
+  ("p" .
+   [3])
+  ("t" .
+   [3])
+  ("expectedCurScore" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("curScore" .
+   [0 0 0 1 0 0 0 0])
+  ("result" .
+   [3 0 0 0 0 0])
+  ("LiveEventTeamScore" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("Score" .
+   [3 0 0 1 0])
+  ("Error" .
+   [6 0 0 0 0])))
