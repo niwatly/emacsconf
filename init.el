@@ -1,4 +1,11 @@
 
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (add-to-list 'load-path "/usr/local/opt/cask")
 
 (require 'cask)
@@ -12,6 +19,7 @@
 (add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
 
 (helm-mode t)
+
 
 (require 'go-autocomplete)
 (require 'go-projectile)
@@ -79,7 +87,13 @@
 
 
 
-;; (global-set-key (kbd "RET") 'newline-and-indent)
+(defun my-move-beginning-of-line ()
+  (interactive)
+  (if (bolp)
+      (back-to-indentation)    
+      (beginning-of-line)))
+
+(global-set-key "\C-a" 'my-move-beginning-of-line)
 (define-key global-map (kbd "C-x g") 'magit-status)
 (define-key global-map [(C z)] 'advertised-undo) 
 (define-key global-map [(C \;)] 'comment-or-uncomment-region)
