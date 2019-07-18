@@ -6,9 +6,9 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(add-to-list 'load-path "/usr/local/opt/cask")
+(load "~/.emacs.d/server")
 
-(require 'cask)
+(require 'cask "/Users/r_takase/.cask/cask.el")
 (cask-initialize)
 (require 'pallet)
 (pallet-mode t)
