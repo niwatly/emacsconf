@@ -10,8 +10,12 @@
 
 (require 'cask "/Users/r_takase/.cask/cask.el")
 (cask-initialize)
+
 (require 'pallet)
 (pallet-mode t)
+
+(require 'edit-server)
+(edit-server-start)
 
 ;;apib
 (autoload 'apib-mode "apib-mode"
