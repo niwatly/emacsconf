@@ -36,3 +36,4 @@
 (depends-on "web-mode")
 (depends-on "yasnippet")
 (depends-on "edit-server")
+(depends-on "dart-mode")

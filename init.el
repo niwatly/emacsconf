@@ -14,8 +14,14 @@
 (require 'pallet)
 (pallet-mode t)
 
+;;edit-server
 (require 'edit-server)
 (edit-server-start)
+(setq edit-server-new-frame nil)
+(add-hook 'edit-server-start-hook
+          (lambda ()
+            (when (string-match "collabotechnology.zendesk.com" (buffer-name))
+              (html-mode))))
 
 ;;apib
 (autoload 'apib-mode "apib-mode"
@@ -36,8 +42,6 @@
   (local-set-key (kbd "C-;") 'auto-complete)
   (local-set-key (kbd "C-c .") 'godef-jump)
   (local-set-key (kbd "C-c ,") 'pop-tag-mark) )
-(add-hook 'go-mode-hook 'go-mode-setup)
-(add-hook 'before-save-hook 'gofmt-before-save)
 
 (require 'magit)
 (setq vcs-ediff-p nil)
@@ -108,6 +112,7 @@
 (define-key global-map (kbd "C-x C-f") 'helm-find-files)
 (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
 (define-key global-map [?¥] [?\\])
+;; (define-key global-map [kbd "C-x C-c"] 'save-buffers-kill-emacs)
 
 ;; 極力UTF-8とする
 (prefer-coding-system 'utf-8)
@@ -147,6 +152,8 @@
 ;;(setq auto-save-default nil)
 ;; ロックファイル（#aa.txt)を作らない
 (setq create-lockfiles nil)
+;; スクロール上限（下限）に達したときに音を鳴らさない
+(setq visible-bell t)
 
 ;;文字の色フォントや色を設定
 (custom-set-faces
