@@ -1,32 +1,34 @@
+;; emacsclient
+;; https://www.yokoweb.net/2017/01/15/macos-emacs-emacsclient/
+;; emacs-mac
+;; https://monologu.com/select_emacs_for_mac/
+;; MacのFinderで隠しフォルダを選択する
+;; https://dev.classmethod.jp/articles/finder-hidden-files-shortcut/
 
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
+;; 起動時の警告が鬱陶しい
+(setq warning-suppress-log-types '((package reinitialization)))
 
 (load "~/.emacs.d/server")
 
-(require 'cask "/Users/r_takase/.cask/cask.el")
+(require 'cask "/usr/local/opt/cask/cask.el")
 (cask-initialize)
 
 (require 'pallet)
 (pallet-mode t)
 
-;;edit-server
-(require 'edit-server)
-(edit-server-start)
-(setq edit-server-new-frame nil)
-(add-hook 'edit-server-start-hook
-          (lambda ()
-            (when (string-match "collabotechnology.zendesk.com" (buffer-name))
-              (html-mode))))
+;; edit-server
+;; (require 'edit-server)
+;; (edit-server-start)
+;; (setq edit-server-new-frame nisl)
+;; (add-hook 'edit-server-start-hook
+;;           (lambda ()
+;;              (when (string-match "collabotechnology.zendesk.com" (buffer-name))
+;;               (html-mode))))
 
-;;apib
-(autoload 'apib-mode "apib-mode"
-        "Major mode for editing API Blueprint files" t)
-(add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
+;; apib
+;; (autoload 'apib-mode "apib-mode"
+;;         "Major mode for editing API Blueprint files" t)
+;; (add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
 
 (helm-mode t)
 
@@ -88,31 +90,41 @@
 ;; ;hs-minor-modeに入っていれば関数をshow/hide 入っていなければ突入
 ;; ;interactiveはユーザが直接呼び出せる関数であることを明示
 ;; ;boundpは変数の定義/未定義をチェック fboundpは関数の定義/未定義をチェック
-(define-key global-map [(C t)] (lambda () 
-				 (interactive) 
-				 (if (boundp 'hs-minor-mode) (hs-toggle-hiding) (hs-minor-mode t))
-				 ))
-
-
+(defun toggle-block ()
+  (interactive) 
+  (if (boundp 'hs-minor-mode) (hs-toggle-hiding) (hs-minor-mode t)))
+  
 
 (defun my-move-beginning-of-line ()
   (interactive)
   (if (bolp)
-      (back-to-indentation)    
-      (beginning-of-line)))
+      (back-to-indentation)
+    (beginning-of-line)))
 
+(defun load-emacs-init ()
+  (interactive)
+  (load-file "~/.emacs.d/init.el"))
+
+;; bindings for mac
+(setq mac-command-key-is-meta nil)
+(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'super)
+(global-set-key [?\s-c] 'kill-ring-save)
+(global-set-key [?\s-v] 'yank)
+(global-set-key [?\s-x] 'kill-region)
+(global-set-key [?\s-a] 'mark-whole-buffer)
+(global-set-key [?\s-z] 'advertised-undo)
+
+;; binding common
+(define-key global-map [(C t)] 'toggle-block)
 (global-set-key "\C-a" 'my-move-beginning-of-line)
-(define-key global-map (kbd "C-x g") 'magit-status)
-(define-key global-map [(C z)] 'advertised-undo) 
 (define-key global-map [(C \;)] 'comment-or-uncomment-region)
 (define-key global-map [(C r)] 'replace-regexp)
-
 (define-key global-map (kbd "C-c l") 'goto-line) 
 (define-key global-map (kbd "C-c b") 'bookmark-jump)
 (define-key global-map (kbd "C-x C-f") 'helm-find-files)
 (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
 (define-key global-map [?¥] [?\\])
-;; (define-key global-map [kbd "C-x C-c"] 'save-buffers-kill-emacs)
 
 ;; 極力UTF-8とする
 (prefer-coding-system 'utf-8)
@@ -126,8 +138,6 @@
 (show-paren-mode 1)			
 ;; yes, no を y, no
 (fset 'yes-or-no-p 'y-or-n-p)
-;;
-;; (defalias 'message-box 'message);
 ;; 時刻を表示する
 (display-time)
 ;; 行番号を表示する
