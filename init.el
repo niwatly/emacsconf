@@ -16,41 +16,7 @@
 (require 'pallet)
 (pallet-mode t)
 
-;; edit-server
-;; (require 'edit-server)
-;; (edit-server-start)
-;; (setq edit-server-new-frame nisl)
-;; (add-hook 'edit-server-start-hook
-;;           (lambda ()
-;;              (when (string-match "collabotechnology.zendesk.com" (buffer-name))
-;;               (html-mode))))
-
-;; apib
-;; (autoload 'apib-mode "apib-mode"
-;;         "Major mode for editing API Blueprint files" t)
-;; (add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
-
 (helm-mode t)
-
-
-(require 'go-autocomplete)
-(require 'go-projectile)
-(require 'go-mode)
-(require 'go-eldoc)
-(defun go-mode-setup()
-  (go-eldoc-setup)
-  (auto-complete-mode t)
-  (flycheck-mode t)
-  (local-set-key (kbd "C-;") 'auto-complete)
-  (local-set-key (kbd "C-c .") 'godef-jump)
-  (local-set-key (kbd "C-c ,") 'pop-tag-mark) )
-
-(require 'magit)
-(setq vcs-ediff-p nil)
-(defadvice magit-ediff (around flymake-off activate)
-  (setq vcs-ediff-p t)
-  ad-do-it
-  (setq vcs-ediff-p nil))
 
 ;;markdown
 (autoload 'markdown-mode "markdown-mode.el"  t)
@@ -80,20 +46,13 @@
  '(tool-bar-mode nil)
  '(tooltip-mode nil))
 
-;; SQL
-;; (autoload 'sql-mode "sql-indent.el"  t)
-;; (eval-after-load "sql"
-;;   '(load-library "sql-indent"))
-(setq sql-indent-offset 2)
-
-
 ;; ;hs-minor-modeに入っていれば関数をshow/hide 入っていなければ突入
 ;; ;interactiveはユーザが直接呼び出せる関数であることを明示
 ;; ;boundpは変数の定義/未定義をチェック fboundpは関数の定義/未定義をチェック
 (defun toggle-block ()
   (interactive) 
   (if (boundp 'hs-minor-mode) (hs-toggle-hiding) (hs-minor-mode t)))
-  
+
 
 (defun my-move-beginning-of-line ()
   (interactive)
@@ -151,9 +110,9 @@
 (setq-default indent-tabs-mode nil)
 ;;入力されたタブは2文字分で
 (add-hook 'java-mode-hook
- 	  (lambda ()
- 	    (setq indent-tabs-mode nil)
- 	    (setq c-basic-offset 2)))
+ 	      (lambda ()
+ 	        (setq indent-tabs-mode nil)
+ 	        (setq c-basic-offset 2)))
 ;;左側に行番号を
 (global-linum-mode)
 ;; *.~ とかのバックアップファイルを作らない
@@ -172,18 +131,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "LightCyan1" :foreground "LightSkyBlue4" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :height 144 :width normal :weight medium)))))
-;; (cond (window-system
-;;        (set-face-attribute 'default nil
-;;        family "Consolas")
-;;        (set-fontset-font (frame-parameter nil 'font)
-;;                          'japanese-jisx0208
-;;                          '("WenQuanYi Micro Hei Mono" . "unicode-bmp")
-;;                          )
-;;        (set-fontset-font (frame-parameter nil 'font)
-;;                          'katakana-jisx0201
-;;                          '("WenQuanYi Micro Hei Mono" . "unicode-bmp")
-;;                          )
-;; ))
-
 
 
